@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Estilo do título "directory" */
+        .logo-directory {
+            color: red;
+            font-size: 36px;
+            margin: 0 0 15px 0;
+            font-weight: bold;
+        }
+
+        /* Estilo da barra de navegação/pesquisa */
+        .search-container {
+            margin-bottom: 10px;
+        }
+
+        .search-input {
+            width: 320px;
+            padding: 4px;
+            font-size: 14px;
+            border: 1px solid #777;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .search-button {
+            padding: 4px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Estilo da lista de links abaixo da barra */
+        .links-container {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .links-container a {
+            color: #0000EE;
+            text-decoration: underline;
+        }
+
+        .links-container a:visited {
+            color: #551A8B;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nome "directory" em vermelho -->
+    <h1 class="logo-directory">directory</h1>
+
+    <!-- Barra de navegação/pesquisa -->
+    <div class="search-container">
+        <form onsubmit="navegar(event)">
+            <input type="text" id="urlInput" class="search-input">
+            <input type="submit" class="search-button" value="Search">
+        </form>
+    </div>
+
+    <!-- Links organizados um abaixo do outro -->
+    <div class="links-container">
+        • <a href="computers and arpanet.html">computers and ARPANET</a><br>
+        • <a href="https://www.youtube.com" target="_blank">YouTube</a>
+    </div>
+
+    <script>
+    function navegar(event) {
+        event.preventDefault();
+        let url = document.getElementById('urlInput').value.trim();
+
+        if (url) {
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                url = 'https://' + url;
+            }
+            window.location.href = url;
+        }
+    }
+    </script>
+
+</body>
+</html>
